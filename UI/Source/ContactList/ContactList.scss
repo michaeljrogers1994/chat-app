@@ -1,0 +1,15 @@
+.contact-list {
+	height: 100vh;
+	background-color: #003d7a;
+	flex-shrink: 1;
+}
+
+/*
+Size overrides. See bootstrap breakpoints for more information:
+https://getbootstrap.com/docs/5.0/layout/breakpoints/#min-width
+
+@include media-breakpoint-up(md) {
+	.contact-list {
+	}
+}
+*/

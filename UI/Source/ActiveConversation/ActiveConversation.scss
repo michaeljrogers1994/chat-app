@@ -1,0 +1,56 @@
+.active-conversation {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	color: white;
+
+	.top-bar {
+		display: flex;
+		background-color: #0458ab;
+		flex-shrink: 1;
+		min-height: 54px;
+
+
+		.active-convo-user {
+			margin-top: auto;
+			margin-bottom: auto;
+			margin-left: 10px;
+		}
+
+		.logout-button {
+			margin-left: auto;
+			margin-right: 10px;
+			background-color: transparent;
+			border: unset;
+			color: white;
+			text-decoration: underline;
+		}
+	}
+
+	.input-bar {
+		margin-top: auto;
+		padding: 10px;
+
+		.text-area {
+			margin-bottom: 4px;	
+		}
+
+		.mb-3 {
+			margin-bottom: 0px !important;
+		}
+	}
+	// reference an image in the same component folder
+	//background-image: url("./filename.svg");
+	
+	// Style should be mobile first with media queries for larger sizes.
+}
+
+/*
+Size overrides. See bootstrap breakpoints for more information:
+https://getbootstrap.com/docs/5.0/layout/breakpoints/#min-width
+
+@include media-breakpoint-up(md) {
+	.active-conversation {
+	}
+}
+*/

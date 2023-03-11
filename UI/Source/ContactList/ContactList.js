@@ -9,13 +9,14 @@ import { useSession } from 'UI/Session';
 // import myVectorImage from './filename.svg';
 // import myRasterImage from './filename.jpg';
 // import getRef from 'UI/Functions/GetRef'; 
-
+import {useMain} from 'UI/SessionMain';
 import Contact from "UI/Contact";
 
 export default function ContactList(props) {
 	// reference propTypes
 	//const { title, size, width } = props;
 
+	const {main, setMain} = useMain();
 	const { session } = useSession();
 
 	/* runs only after component initialisation (comparable to legacy componentDidMount lifecycle method)
@@ -52,9 +53,16 @@ export default function ContactList(props) {
 	
 	return (
 		<div className="contact-list">
+			<button className = "logo" onClick = {() => {
+				setMain(null);
+			}}>
+				<i class="fas fa-comments"></i> ChatApp
+			</button>
 			<Loop
-				over = "user/list"
-				filter = {{where: {id: {not: session.user.id}}}}
+				live
+				over = "chat/list"
+				include
+				filter = {{where: [{userId: session.user?.id}, {connectedUserId: session.user?.id}]}}
 			>
 				{user=> <Contact user = {user}/>}
 			</Loop>

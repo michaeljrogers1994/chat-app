@@ -7,6 +7,7 @@
 	width: 100%;
 	background-color: transparent;
 	border: none;
+	min-height: 54px;
 	
 	// Style should be mobile first with media queries for larger sizes.
 	.image {
@@ -33,7 +34,7 @@
 		margin-left: 22px;
 
 		&.offline{
-			background-color: red;
+			background-color: grey;
 		}
 
 		&.online {
@@ -42,7 +43,11 @@
 	}
 
 	&:hover {
-		background-color: #051537;
+		background-color: #738fa7
+	}
+
+	&.active {
+		background-color: #738fa7
 	}
 }
 
